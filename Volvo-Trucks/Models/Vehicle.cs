@@ -19,5 +19,6 @@ namespace Volvo_Trucks.Models
         public int ModelYear { get; set; }
         public string Name { get; set; }
         public string Color { get; set; }
+        public int Model { get; set; }
     }
 }

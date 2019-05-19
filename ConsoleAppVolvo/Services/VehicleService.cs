@@ -25,7 +25,7 @@ namespace ConsoleApp.Services
                 client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
 
                 client.BaseAddress = new Uri(APIUrl);
-                var response = client.PostAsJsonAsync("api/vehicles", vehicle).Result;
+                var response = client.PostAsJsonAsync("api/vehicle", vehicle).Result;
                 if (response.IsSuccessStatusCode)
                 {
                     string responseString = response.Content.ReadAsStringAsync().Result;
@@ -43,7 +43,7 @@ namespace ConsoleApp.Services
                 client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
 
                 client.BaseAddress = new Uri(APIUrl);
-                var response = client.PutAsJsonAsync("api/vehicles/" + vehicle.Id.ToString(), vehicle).Result;
+                var response = client.PutAsJsonAsync("api/vehicle/" + vehicle.Id.ToString(), vehicle).Result;
                 if (response.IsSuccessStatusCode)
                 {
                     string responseString = response.Content.ReadAsStringAsync().Result;

@@ -2,15 +2,17 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Volvo_Trucks.Models;
 
 namespace VolvoTrucks.Migrations
 {
     [DbContext(typeof(VehicleContext))]
-    partial class VehicleContextModelSnapshot : ModelSnapshot
+    [Migration("20190519035816_add_model")]
+    partial class add_model
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
