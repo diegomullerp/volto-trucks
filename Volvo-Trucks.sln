@@ -3,9 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27130.2003
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Volvo-Trucks", "Volvo-Trucks\Volvo-Trucks.csproj", "{8AD03C82-9048-4E86-9EAE-FBC4F776E636}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Volvo-Trucks", "Volvo-Trucks\Volvo-Trucks.csproj", "{8AD03C82-9048-4E86-9EAE-FBC4F776E636}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApp", "ConsoleAppVolvo\ConsoleApp.csproj", "{A6E56986-2BC1-41B3-957A-D48590A8C21F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Volvo-Trucks-Test", "Volvo-Trucks-Test\Volvo-Trucks-Test.csproj", "{E25C78F6-5C42-418A-AF16-4E845877E39C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{A6E56986-2BC1-41B3-957A-D48590A8C21F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A6E56986-2BC1-41B3-957A-D48590A8C21F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A6E56986-2BC1-41B3-957A-D48590A8C21F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E25C78F6-5C42-418A-AF16-4E845877E39C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E25C78F6-5C42-418A-AF16-4E845877E39C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E25C78F6-5C42-418A-AF16-4E845877E39C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E25C78F6-5C42-418A-AF16-4E845877E39C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

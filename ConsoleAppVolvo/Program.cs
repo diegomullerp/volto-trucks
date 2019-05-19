@@ -48,7 +48,7 @@ namespace ConsoleApp
                     case "4":
                         List(); break;
                     case "5":
-                        FindByChassis(); break;
+                        FindById(); break;
                     case "6":
                         Console.Clear();
                         Console.WriteLine("Do you want to exit the application (Y/N)?");
@@ -213,7 +213,7 @@ namespace ConsoleApp
                 Console.ReadLine();
             }
         }
-        static void FindByChassis()
+        static void FindById()
         {
             try
             {

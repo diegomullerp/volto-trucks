@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Volvo_Trucks.Models;
+using Volvo_Trucks.Services;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -14,9 +15,12 @@ namespace Volvo_Trucks.Controllers
     public class VehicleController : Controller
     {
         private readonly VehicleContext _context;
+        private VehicleService _vehicleService;
         public VehicleController(VehicleContext context)
         {
             _context = context;
+            _vehicleService = new VehicleService(_context);
+
         }
         
         // GET: api/Vehicles/5
@@ -27,7 +31,7 @@ namespace Volvo_Trucks.Controllers
             {
                 return BadRequest(ModelState);
             }
-            var vehicle = _context.Vehicles.FirstOrDefault(x => x.Id == id);
+            var vehicle = _vehicleService.GetById(id);
 
             if (vehicle == null)
             {
@@ -40,7 +44,7 @@ namespace Volvo_Trucks.Controllers
         [HttpGet]
         public IEnumerable<Vehicle> GetVehicle()
         {
-            return _context.Vehicles;
+            return _vehicleService.GetAll();
         }
 
         // PUT: api/Vehicles/5
@@ -57,23 +61,15 @@ namespace Volvo_Trucks.Controllers
                 return BadRequest();
             }
 
-            _context.Entry(vehicle).State = EntityState.Modified;
-
             try
             {
-                _context.SaveChangesAsync();
+                _vehicleService.Update(vehicle, id);
             }
-            catch (DbUpdateConcurrencyException)
+            catch (Exception ex)
             {
-                if (!VehicleExists(id))
-                {
-                    return NotFound();
-                }
-                else
-                {
-                    throw;
-                }
+                throw (ex);
             }
+            
 
             return NoContent();
         }
@@ -87,8 +83,7 @@ namespace Volvo_Trucks.Controllers
                 return BadRequest(ModelState);
             }
 
-            _context.Vehicles.Add(vehicle);
-            _context.SaveChangesAsync();
+            _vehicleService.Save(vehicle);
 
             return CreatedAtAction("GetVehicle", new { id = vehicle.Id }, vehicle);
         }
@@ -103,21 +98,12 @@ namespace Volvo_Trucks.Controllers
                 return BadRequest(ModelState);
             }
 
-            var vehicle = _context.Vehicles.FirstOrDefault(x => x.Id == id);
-            if (vehicle == null)
-            {
-                return NotFound();
-            }
 
-            _context.Vehicles.Remove(vehicle);
-            _context.SaveChangesAsync();
+            _vehicleService.Delete(id);
 
-            return Ok(vehicle);
+            return Ok();
         }
 
-        private bool VehicleExists(int id)
-        {
-            return _context.Vehicles.Any(e => e.Id == id);
-        }
+        
     }
 }
