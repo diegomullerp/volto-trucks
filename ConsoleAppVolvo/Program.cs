@@ -198,7 +198,7 @@ namespace ConsoleApp
 
                 foreach (Vehicle vehicle in vehicles)
                 {
-                    Console.WriteLine("Name: " + vehicle.Name + "ID: " + vehicle.Id + " ｜ Fabrication Year: " + vehicle.FabricationYear + " ｜ Model Year: " + vehicle.ModelYear + " ｜ Model: " + (VehicleModel)vehicle.Model + " ｜ Color: " + vehicle.Color);
+                    Console.WriteLine(" ID: " + vehicle.Id + " ｜ Name: " + vehicle.Name + " ｜ Fabrication Year: " + vehicle.FabricationYear + " ｜ Model Year: " + vehicle.ModelYear + " ｜ Model: " + (VehicleModel)vehicle.Model + " ｜ Color: " + vehicle.Color);
                 }
                 
             }
@@ -228,7 +228,7 @@ namespace ConsoleApp
                     if (vehicle.Id > 0)
                     {
                         Console.WriteLine("Truck found!");
-                        Console.WriteLine("Name: " + vehicle.Name + "ID: " + vehicle.Id + " ｜ Fabrication Year: " + vehicle.FabricationYear + " ｜ Model Year: " + vehicle.ModelYear + " ｜ Model: " + (VehicleModel)vehicle.Model + " ｜ Color: " + vehicle.Color);
+                        Console.WriteLine(" ID: " + vehicle.Id + " ｜ Name: " + vehicle.Name + " ｜ Fabrication Year: " + vehicle.FabricationYear + " ｜ Model Year: " + vehicle.ModelYear + " ｜ Model: " + (VehicleModel)vehicle.Model + " ｜ Color: " + vehicle.Color);
                     }
                     else
                         Console.WriteLine("Truck not found!");

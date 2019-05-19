@@ -91,7 +91,12 @@ namespace ConsoleApp.Models
 
         public void Validations()
         {
-           
+            if (this.Model != 1 && this.Model != 2)
+                throw new Exception("Incorret Model, please choose between FN or FH");
+            if (this.FabricationYear != DateTime.Now.Year.ToString())
+                throw new Exception("Fabrication Year must be the current year (" + DateTime.Now.Year.ToString() + ")");
+            if(this.ModelYear < DateTime.Now.Year)
+                throw new Exception("Model Year must be the current or higher year (" + DateTime.Now.Year.ToString() + ")");
         }
     }
 }
