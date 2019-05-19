@@ -1,0 +1,5 @@
+To run the project, you need to allow build both projects at the same time
+To do that right-click on the solution ->> Properties ->> select many inicialization projects and select both projects
+to inicialize on the run
+
+Make sure to update-database before run the project in order to create the local database
